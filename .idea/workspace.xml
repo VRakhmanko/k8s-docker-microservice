@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7740ddac-1c86-4650-9e64-bb2b150fde0e" name="Changes" comment="share project">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k8s-docker-microservice.iml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s-docker-microservice.iml" afterDir="false" />
-    </list>
+    <list default="true" id="7740ddac-1c86-4650-9e64-bb2b150fde0e" name="Changes" comment="share project" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -89,7 +84,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.27539062",
     "project.structure.side.proportion": "0.5720524",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
+    "settings.editor.selected.configurable": "vcs.Mercurial",
     "spring.configuration.checksum": "3cb3a40ed4452e338301ac8f9f68a15f"
   },
   "keyToStringList": {
@@ -202,7 +197,7 @@
       <workItem from="1681635362535" duration="1948000" />
       <workItem from="1681637334129" duration="90000" />
       <workItem from="1681637451658" duration="1134000" />
-      <workItem from="1681645211125" duration="47673000" />
+      <workItem from="1681645211125" duration="47906000" />
     </task>
     <task id="LOCAL-00001" summary="share project">
       <created>1681901542427</created>
@@ -218,7 +213,28 @@
       <option name="project" value="LOCAL" />
       <updated>1681905571549</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="share project">
+      <created>1681906527873</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1681906527873</updated>
+    </task>
+    <task id="LOCAL-00004" summary="share project">
+      <created>1681906534281</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1681906534281</updated>
+    </task>
+    <task id="LOCAL-00005" summary="share project">
+      <created>1681906539561</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1681906539561</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -236,6 +252,10 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/post" />
+      <path value="$PROJECT_DIR$/user" />
+    </ignored-roots>
     <MESSAGE value="Commit all" />
     <MESSAGE value="share project" />
     <option name="LAST_COMMIT_MESSAGE" value="share project" />

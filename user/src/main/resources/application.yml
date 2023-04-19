@@ -1,0 +1,16 @@
+server:
+  port: 18080
+
+spring:
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://${DbUserHost:localhost}/${DbName:users}
+    username: ${DbUser:jdbc_user}
+    password: ${DbPassword:passw0rd}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    defer-datasource-initialization: true
+  sql:
+    init:
+      mode: always
