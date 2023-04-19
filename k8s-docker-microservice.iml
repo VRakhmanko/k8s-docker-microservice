@@ -3,6 +3,13 @@
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$" />
+    <orderEntry type="jdk" jdkName="17" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="post" />
+    <orderEntry type="module" module-name="post.main" />
+    <orderEntry type="module" module-name="post.test" />
+    <orderEntry type="module" module-name="user" />
+    <orderEntry type="module" module-name="User.main" />
+    <orderEntry type="module" module-name="User.test" />
   </component>
 </module>

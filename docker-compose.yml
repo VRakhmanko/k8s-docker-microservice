@@ -29,7 +29,7 @@ services:
       start_period: 40s
 
   user-service:
-    build: ./User
+    build: ./user
     image: epamviachaslaurakhmanko/user-service
     ports:
       - "18080:18080"
