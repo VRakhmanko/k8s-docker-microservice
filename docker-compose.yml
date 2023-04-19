@@ -1,0 +1,107 @@
+version: '3.8'
+
+services:
+  post-service:
+    build: ./post
+    image: epamviachaslaurakhmanko/post-service
+    ports:
+      - "18081:18081"
+    networks:
+      - postgres
+      - ms-network
+    restart: always
+    environment:
+      DbUserHost: ${PostDbServiceName}
+      DbUser: ${PostDbUser}
+      DbPassword: ${PostDbPassword}
+      DbName: ${PostDbName}
+      DbPort: ${PostDbPort}
+      UserHostName: ${UserServiceHostName}
+    depends_on:
+      - post-postgres
+    links:
+      - post-postgres:post-postgres
+    healthcheck:
+      test: "/usr/bin/curl --fail http://localhost:18081/actuator/health || exit 1"
+      interval: 40s
+      timeout: 8s
+      retries: 3
+      start_period: 40s
+
+  user-service:
+    build: ./User
+    image: epamviachaslaurakhmanko/user-service
+    ports:
+      - "18080:18080"
+    networks:
+      - postgres
+      - ms-network
+    restart: always
+    environment:
+      DbUserHost: ${UserDbServiceName}
+      DbUser: ${UserDbUser}
+      DbPassword: ${UserDbPassword}
+      DbName: ${UserDbName}
+      PostDbPort: ${PostDbPort}
+    depends_on:
+      - user-postgres
+    links:
+      - user-postgres:user-postgres
+    healthcheck:
+      test: "/usr/bin/curl --fail http://localhost:18080/actuator/health || exit 1"
+      interval: 40s
+      timeout: 8s
+      retries: 3
+      start_period: 40s
+
+  user-postgres:
+    ports:
+      - "5432:5432"
+    container_name: user-postgres_container
+    image: "postgres:15-alpine3.17"
+    environment:
+      POSTGRES_USER: ${UserDbUser}
+      POSTGRES_PASSWORD: ${UserDbPassword}
+      POSTGRES_DB: ${UserDbName}
+    volumes:
+      - user-postgres:/data/postgres
+    networks:
+      - postgres
+    restart: always
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U ${UserDbUser} -d ${UserDbName}" ]
+      interval: 40s
+      timeout: 8s
+      retries: 3
+      start_period: 40s
+
+  post-postgres:
+    ports:
+      - "15432:5432"
+    container_name: post-postgres_container
+    image: "postgres:15-alpine3.17"
+    environment:
+      POSTGRES_USER: ${PostDbUser}
+      POSTGRES_PASSWORD: ${PostDbPassword}
+      POSTGRES_DB: ${PostDbName}
+    volumes:
+      - post-postgres:/data/postgres
+    networks:
+      - postgres
+    restart: always
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U ${postDbUser} -d ${postDbName}" ]
+      interval: 40s
+      timeout: 8s
+      retries: 3
+      start_period: 40s
+
+networks:
+  postgres:
+    internal: true
+  ms-network:
+    internal: false
+
+volumes:
+  user-postgres:
+  post-postgres:

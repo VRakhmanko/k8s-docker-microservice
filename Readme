@@ -1,0 +1,8 @@
+Commands:
+
+docker ps  - show running ps and theirs status/health
+docker network ls
+               inspect <network_name>
+
+docker-compose up --build
+docker-compose push

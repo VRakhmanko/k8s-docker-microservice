@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="7740ddac-1c86-4650-9e64-bb2b150fde0e" name="Changes" comment="Commit all">
+      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/1144558820/User.commons.test.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/my-artifact-id.test.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Readme" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User/src/main/java/com/epam/vrakhmanko/user/UserApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User/src/main/java/com/epam/vrakhmanko/user/dto/UserDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User/src/main/java/com/epam/vrakhmanko/user/mapper/PostMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User/src/main/java/com/epam/vrakhmanko/user/repository/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User/src/main/java/com/epam/vrakhmanko/user/repository/domain/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User/src/main/java/com/epam/vrakhmanko/user/rest/Constants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User/src/main/java/com/epam/vrakhmanko/user/rest/GreetingController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User/src/main/java/com/epam/vrakhmanko/user/rest/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User/src/test/java/com/epam/vrakhmanko/user/UserApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/k8s-docker-microservice.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/post/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/post/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/post/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/post/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/post/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/post/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/post/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/post/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/post/src/main/java/com/epam/vrakhmanko/post/PostApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/post/src/main/java/com/epam/vrakhmanko/post/config/Config.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/post/src/main/java/com/epam/vrakhmanko/post/dto/AuthorPostDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/post/src/main/java/com/epam/vrakhmanko/post/dto/PostDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/post/src/main/java/com/epam/vrakhmanko/post/mapper/PostMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/post/src/main/java/com/epam/vrakhmanko/post/repository/PostRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/post/src/main/java/com/epam/vrakhmanko/post/repository/domain/Post.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/post/src/main/java/com/epam/vrakhmanko/post/rest/Constants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/post/src/main/java/com/epam/vrakhmanko/post/rest/GreetingController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/post/src/main/java/com/epam/vrakhmanko/post/rest/PostController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/post/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/post/src/test/java/com/epam/vrakhmanko/post/PostApplicationTests.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$/User">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/post">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$/User">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="User" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="User" type="f1a62948:ProjectNode" />
+                <item name="Run Configurations" type="7b0102dc:RunConfigurationsNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/User" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2OQcIfkqFo8YTItshgKqJLKvzAR" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "20",
+    "last_opened_file_path": "D:/Education/Kubernetes/wrs2/k8s-docker-microservice/post",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.27539062",
+    "project.structure.side.proportion": "0.5720524",
+    "settings.editor.selected.configurable": "preferences.packagesearch.PackageSearchGeneralConfigurable",
+    "spring.configuration.checksum": "3cb3a40ed4452e338301ac8f9f68a15f"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
+  }
+}]]></component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Education\Kubernetes\wrs2\k8s-docker-microservice\post" />
+      <recent name="D:\Education\Kubernetes\wrs2\k8s-docker-microservice\User" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="dto" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.epam.vrakhmanko.post.dto" />
+      <recent name="com.epam.vrakhmanko.post.config" />
+      <recent name="com.epam.vrakhmanko.post.mapper" />
+      <recent name="repository" />
+      <recent name="rest" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.UserApplication">
+    <configuration name="User [bootJar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/User" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="bootJar" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="PostApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="post.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.epam.vrakhmanko.post.PostApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="User.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.epam.vrakhmanko.user.UserApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.epam.vrakhmanko.user.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="User/Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="sourceFilePath" value="User/Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.UserApplication" />
+        <item itemvalue="Docker.User/Dockerfile" />
+        <item itemvalue="Gradle.User [bootJar]" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7740ddac-1c86-4650-9e64-bb2b150fde0e" name="Changes" comment="" />
+      <created>1681496168632</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1681496168632</updated>
+      <workItem from="1681496170235" duration="34324000" />
+      <workItem from="1681635362535" duration="1948000" />
+      <workItem from="1681637334129" duration="90000" />
+      <workItem from="1681637451658" duration="1134000" />
+      <workItem from="1681645211125" duration="42731000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Commit all" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit all" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/User/src/main/java/com/epam/vrakhmanko/user/rest/UserController.java</url>
+          <line>71</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/post/src/main/java/com/epam/vrakhmanko/post/rest/PostController.java</url>
+          <line>61</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
