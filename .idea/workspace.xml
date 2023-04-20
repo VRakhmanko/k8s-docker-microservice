@@ -4,7 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7740ddac-1c86-4650-9e64-bb2b150fde0e" name="Changes" comment="share project" />
+    <list default="true" id="7740ddac-1c86-4650-9e64-bb2b150fde0e" name="Changes" comment="share project">
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sql/insert-post-dummy-data.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sql/insert-user-dummy-data.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Readme" beforeDir="false" afterPath="$PROJECT_DIR$/Readme" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -55,6 +66,7 @@
     <option name="RECENT_COMMON_BRANCH" value="relase" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="SYNC" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GithubDefaultAccount">
     <option name="defaultAccountId" value="a0c473da-0cab-4c85-bbfc-3c4714d3d52d" />
@@ -84,15 +96,26 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.27539062",
     "project.structure.side.proportion": "0.5720524",
-    "settings.editor.selected.configurable": "vcs.Mercurial",
+    "settings.editor.selected.configurable": "database.query.execution",
     "spring.configuration.checksum": "3cb3a40ed4452e338301ac8f9f68a15f"
   },
   "keyToStringList": {
     "DatabaseDriversLRU": [
       "postgresql"
+    ],
+    "RunConfigurationTargetLRU": [
+      "0751fb4b-876f-422f-8764-4768d898dabc"
+    ],
+    "com.intellij.ide.scratch.LRUPopupBuilder$1/": [
+      "PostgreSQL"
     ]
   }
 }]]></component>
+  <component name="Push.Settings">
+    <force-push-targets>
+      <force-push-target remote-path="origin" branch="main" />
+    </force-push-targets>
+  </component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -100,6 +123,9 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Education\Kubernetes\wrs2\k8s-docker-microservice\post" />
       <recent name="D:\Education\Kubernetes\wrs2\k8s-docker-microservice\User" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Education\Kubernetes\wrs2\k8s-docker-microservice\sql" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="dto" />
@@ -112,7 +138,13 @@
       <recent name="rest" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.UserApplication">
+  <component name="RunManager" selected="Database Script.add-user-dummy-data.sql">
+    <configuration name="add-user-dummy-data.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
+      <script-file value="$PROJECT_DIR$/add-user-dummy-data.sql" />
+      <script-mode>FILE</script-mode>
+      <data-source id="0751fb4b-876f-422f-8764-4768d898dabc" />
+      <method v="2" />
+    </configuration>
     <configuration name="User [bootJar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -177,11 +209,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Database Script.add-user-dummy-data.sql" />
         <item itemvalue="Spring Boot.UserApplication" />
         <item itemvalue="Gradle.User [bootJar]" />
         <item itemvalue="Docker.User/Dockerfile" />
         <item itemvalue="Spring Boot.UserApplication" />
-        <item itemvalue="Docker.User/Dockerfile" />
       </list>
     </recent_temporary>
   </component>
@@ -197,7 +229,7 @@
       <workItem from="1681635362535" duration="1948000" />
       <workItem from="1681637334129" duration="90000" />
       <workItem from="1681637451658" duration="1134000" />
-      <workItem from="1681645211125" duration="47906000" />
+      <workItem from="1681645211125" duration="56745000" />
     </task>
     <task id="LOCAL-00001" summary="share project">
       <created>1681901542427</created>
@@ -234,7 +266,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681906539561</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="share project">
+      <created>1681906952496</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1681906952496</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

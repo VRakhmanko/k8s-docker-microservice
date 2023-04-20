@@ -3,7 +3,7 @@ version: '3.8'
 services:
   post-service:
     build: ./post
-    image: epamviachaslaurakhmanko/post-service
+    image: epamviachaslaurakhmanko/post-service:1.0.0
     ports:
       - "18081:18081"
     networks:
@@ -30,7 +30,7 @@ services:
 
   user-service:
     build: ./user
-    image: epamviachaslaurakhmanko/user-service
+    image: epamviachaslaurakhmanko/user-service:1.0.0
     ports:
       - "18080:18080"
     networks:
@@ -65,6 +65,7 @@ services:
       POSTGRES_DB: ${UserDbName}
     volumes:
       - user-postgres:/data/postgres
+      - ./sql/insert-user-dummy-data.sql:/docker-entrypoint-initdb.d/insert-user-dummy-data.sql
     networks:
       - postgres
     restart: always
@@ -86,6 +87,7 @@ services:
       POSTGRES_DB: ${PostDbName}
     volumes:
       - post-postgres:/data/postgres
+      - ./sql/insert-post-dummy-data.sql:/docker-entrypoint-initdb.d/insert-post-dummy-data.sql
     networks:
       - postgres
     restart: always

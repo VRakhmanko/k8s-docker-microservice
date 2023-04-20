@@ -5,4 +5,9 @@ docker network ls
                inspect <network_name>
 
 docker-compose up --build
+docker-compose stop
 docker-compose push
+docker build
+docker tag
+docker build -t epamviachaslaurakhmanko/post-service:1.0.0 .\post\
+docker push epamviachaslaurakhmanko/user-service:1.0.0
