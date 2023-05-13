@@ -9,7 +9,6 @@ create table if not exists users
 );
 
 insert into users(id, amount_of_posts, username)
-values
-    (10, 10, 'Sergei'),
-    (20, 20, 'Evgenii'),
-    (30, 30, 'Slava');
+values (10, 10, 'Sergei'),
+       (20, 20, 'Evgenii'),
+       (30, 30, 'Slava');

@@ -42,12 +42,12 @@ public class PostController {
                 .bodyToMono(AuthorPostDto.class)
                 .share()
                 .block();
-                postRepository.save(mapper.postDtoToPost(postDto));
+        postRepository.save(mapper.postDtoToPost(postDto));
         return ResponseEntity.ok(postDto);
     }
 
     @GetMapping("{id}")
-    public ResponseEntity<?> getUser(@PathVariable Integer id) {
+    public ResponseEntity<Object> getUser(@PathVariable Integer id) {
         Optional<Post> post = postRepository.findById(id);
         if (post.isEmpty()) {
             return ResponseEntity.status(404).body(POST_DOES_NOT_EXIST);
@@ -58,7 +58,7 @@ public class PostController {
 
     @DeleteMapping("/{id}")
     @Transactional
-    public ResponseEntity<?> delete(@PathVariable Integer id) {
+    public ResponseEntity<Object> delete(@PathVariable Integer id) {
         Optional<Post> post = postRepository.findById(id);
         if (post.isEmpty()) {
             return ResponseEntity.status(404).body(POST_DOES_NOT_EXIST);
@@ -77,7 +77,7 @@ public class PostController {
 
     @PutMapping("/{id}")
     @Transactional
-    public ResponseEntity<?> update(@PathVariable Integer id, @Valid @RequestBody PostDto updatedPostDto) {
+    public ResponseEntity<Object> update(@PathVariable Integer id, @Valid @RequestBody PostDto updatedPostDto) {
         Optional<Post> post = postRepository.findById(id);
         if (post.isEmpty()) {
             return ResponseEntity.status(404).body(POST_DOES_NOT_EXIST);

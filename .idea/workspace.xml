@@ -4,17 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7740ddac-1c86-4650-9e64-bb2b150fde0e" name="Changes" comment="share project">
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sql/insert-post-dummy-data.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sql/insert-user-dummy-data.sql" afterDir="false" />
+    <list default="true" id="7740ddac-1c86-4650-9e64-bb2b150fde0e" name="Changes" comment="add db init scripts and tags">
+      <change afterPath="$PROJECT_DIR$/k8s/database-via-deployment.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/k8s/database-via-statefulset.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/k8s/user-post-services.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/k8s/user-service-persistent-volume.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Readme" beforeDir="false" afterPath="$PROJECT_DIR$/Readme" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/post/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/post/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/post/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/post/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/post/src/main/java/com/epam/vrakhmanko/post/rest/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/post/src/main/java/com/epam/vrakhmanko/post/rest/PostController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sql/insert-user-dummy-data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/sql/insert-user-dummy-data.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/user/Dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,6 +74,10 @@
   <component name="GithubDefaultAccount">
     <option name="defaultAccountId" value="a0c473da-0cab-4c85-bbfc-3c4714d3d52d" />
   </component>
+  <component name="KubernetesApiPersistence">
+    <option name="context" value="docker-desktop" />
+    <option name="namespace" value="k8s-program" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -91,13 +98,13 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "20",
-    "last_opened_file_path": "D:/Education/Kubernetes/wrs2/k8s-docker-microservice/post",
+    "last_opened_file_path": "D:/Education/Kubernetes/wrs2/k8s-docker-microservice/k8s",
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.27539062",
-    "project.structure.side.proportion": "0.5720524",
-    "settings.editor.selected.configurable": "database.query.execution",
-    "spring.configuration.checksum": "3cb3a40ed4452e338301ac8f9f68a15f"
+    "project.structure.side.proportion": "0.23143564",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "spring.configuration.checksum": "3702b8609af45774287724c7b45afd43"
   },
   "keyToStringList": {
     "DatabaseDriversLRU": [
@@ -121,6 +128,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Education\Kubernetes\wrs2\k8s-docker-microservice\k8s" />
       <recent name="D:\Education\Kubernetes\wrs2\k8s-docker-microservice\post" />
       <recent name="D:\Education\Kubernetes\wrs2\k8s-docker-microservice\User" />
     </key>
@@ -229,7 +237,16 @@
       <workItem from="1681635362535" duration="1948000" />
       <workItem from="1681637334129" duration="90000" />
       <workItem from="1681637451658" duration="1134000" />
-      <workItem from="1681645211125" duration="56745000" />
+      <workItem from="1681645211125" duration="62596000" />
+      <workItem from="1682152482360" duration="3010000" />
+      <workItem from="1682690797641" duration="19223000" />
+      <workItem from="1682870325368" duration="12247000" />
+      <workItem from="1683620721756" duration="34343000" />
+      <workItem from="1683730416739" duration="648000" />
+      <workItem from="1683731613599" duration="1145000" />
+      <workItem from="1683732955198" duration="1243000" />
+      <workItem from="1683734212479" duration="1386000" />
+      <workItem from="1683736634610" duration="22129000" />
     </task>
     <task id="LOCAL-00001" summary="share project">
       <created>1681901542427</created>
@@ -273,7 +290,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681906952496</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="add db init scripts and tags">
+      <created>1681982782950</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1681982782950</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -297,7 +321,8 @@
     </ignored-roots>
     <MESSAGE value="Commit all" />
     <MESSAGE value="share project" />
-    <option name="LAST_COMMIT_MESSAGE" value="share project" />
+    <MESSAGE value="add db init scripts and tags" />
+    <option name="LAST_COMMIT_MESSAGE" value="add db init scripts and tags" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
