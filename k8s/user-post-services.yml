@@ -50,6 +50,8 @@ spec:
               value: post-postgres
             - name: DbUser
               value: jdbc_post
+            - name: UserHostName
+              value: user-service
 
 ---
 apiVersion: v1
