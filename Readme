@@ -1,6 +1,7 @@
 Commands:
 
 docker ps  - show running ps and theirs status/health
+    add actuator to app
 docker network ls
                inspect <network_name>
 
@@ -11,3 +12,32 @@ docker build
 docker tag
 docker build -t epamviachaslaurakhmanko/post-service:1.0.0 .\post\
 docker push epamviachaslaurakhmanko/user-service:1.0.0
+
+Kubernetes:
+kubectl completion -h
+kubectl get rs
+kubectl get nodes
+kubectl get pods --all-namespaces
+kubectl get all -n=<namespace_value>
+kubectl get nodes
+kubectl create -f <yml_file>
+kubectl delete pod <pod_name> - ensure to remove deployment before removing the pod
+kubectl delete --all deployments --namespace=<namespace_name>
+kubectl apply -f <yml_file>
+kubectl delete -f <yml_file>
+kubectl describe pod/replicaset <pod_name>/<replicaset_name>
+kubectl get services
+kubectl delete --all services
+
+pod<-replicaset<-deployment
+kubectl edit deployment <deployment_name>  - deploy via edit
+kubectl scale replicaset <replicaset_name> --replicas 1
+DOCUMENTATION:
+kubectl explain pods
+
+BASH access:
+kubectl exec --stdin --tty <pod_name> -- /bin/bash
+
+To test application and male the service available out of cluster
+check bounded ports using: get services and run port forward:
+kubectl port-forward service/user-service 18080:18080

@@ -1,0 +1,272 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: k8s-program
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  namespace: k8s-program
+  name: post-postgres-claim0
+  labels:
+    type: local
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: /run/desktop/mnt/host/d/Temp/post-postgres/data
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  namespace: k8s-program
+  name: post-postgres-claim0
+  labels:
+    app: post-postgres
+    tier: database
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 100Mi
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  namespace: k8s-program
+  name: post-postgres-initdb-config
+data:
+  init.sql: |
+    create table if not exists post
+    (
+        id        integer not null
+            primary key
+            constraint post_id_check
+                check (id >= 1),
+        author_id integer not null
+            constraint post_author_id_check
+                check (author_id >= 1),
+        posted_at date,
+        "text"    varchar(255)
+    );
+    
+    insert into post(id, author_id, posted_at, "text")
+    values (2, 10, '04-01-1987', 'Hooray!, 1 year'),
+           (3, 10, '04-01-1988', 'Hooray!, 2 year'),
+           (4, 10, '04-01-1989', 'Hooray!, 3 year'),
+           (5, 10, '04-01-1990', 'Hooray!, 4 year'),
+           (6, 10, '04-01-1991', 'Hooray!, 5 year'),
+           (7, 10, '04-01-1992', 'Hooray!, 6 year'),
+           (8, 10, '04-01-1993', 'Hooray!, 7 year'),
+           (9, 10, '04-01-1993', 'Hooray!, 8 year'),
+           (10, 10, '04-01-1993', 'Hooray!, 9 year'),
+           (11, 10, '04-01-1993', 'Hooray!, 10 year'),
+           (12, 20, '04-01-1987', 'Hooray!, 1 year'),
+           (13, 20, '04-01-1988', 'Hooray!, 2 year'),
+           (14, 20, '04-01-1989', 'Hooray!, 3 year'),
+           (15, 20, '04-01-1990', 'Hooray!, 4 year'),
+           (16, 20, '04-01-1991', 'Hooray!, 5 year'),
+           (17, 20, '04-01-1992', 'Hooray!, 6 year'),
+           (18, 20, '04-01-1993', 'Hooray!, 7 year'),
+           (22, 30, '04-01-1987', 'Hooray!, 1 year'),
+           (23, 30, '04-01-1988', 'Hooray!, 2 year'),
+           (24, 30, '04-01-1989', 'Hooray!, 3 year'),
+           (25, 30, '04-01-1990', 'Hooray!, 4 year'),
+           (26, 30, '04-01-1991', 'Hooray!, 5 year'),
+           (27, 30, '04-01-1992', 'Hooray!, 6 year'),
+           (28, 30, '04-01-1993', 'Hooray!, 7 year');
+---
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: k8s-program
+  name: post-postgres
+  labels:
+    app: post-postgres
+    tier: database
+spec:
+  ports:
+    - port: 15432
+      targetPort: 5432
+  selector:
+    app: post-postgres
+    tier: database
+  type: NodePort
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: k8s-program
+  name: post-postgres
+  labels:
+    app: post-postgres
+    tier: database
+spec:
+  selector:
+    matchLabels:
+      app: post-postgres
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: post-postgres
+        tier: database
+    spec:
+      containers:
+        - name: post-postgres
+          image: postgres:15-alpine3.17
+          imagePullPolicy: "IfNotPresent"
+          env:
+            - name: POSTGRES_DB
+              value: posts
+            - name: POSTGRES_USER
+              value: jdbc_post
+            - name: POSTGRES_PASSWORD
+              value: passw0rd
+          ports:
+            - containerPort: 15432
+              name: post-postgres
+          volumeMounts:
+            - name: post-postgres-claim0
+              mountPath: /var/lib/postgresql/data
+
+            - mountPath: /docker-entrypoint-initdb.d
+              name: post-postgres-initdb
+      volumes:
+        - name: post-postgres-claim0
+          persistentVolumeClaim:
+            claimName: post-postgres-claim0
+
+        - name: post-postgres-initdb
+          configMap:
+            name: post-postgres-initdb-config
+
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  namespace: k8s-program
+  name: user-postgres-claim0
+  labels:
+    type: local
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "./volumes/docker/user-postgres/docker-pg-vol/data"
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  namespace: k8s-program
+  name: user-postgres-claim0
+  labels:
+    app: user-postgres
+    tier: database
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 100Mi
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  namespace: k8s-program
+  name: user-postgres-initdb-config
+data:
+  init.sql: |
+    create table if not exists users
+    (
+        id              integer           not null
+            primary key
+            constraint users_id_check
+                check (id >= 1),
+        amount_of_posts integer default 0 not null,
+        username        varchar(255)      not null
+    );
+
+    insert into users(id, amount_of_posts, username)
+    values (10, 10, 'Sergei'),
+           (20, 20, 'Evgenii'),
+           (30, 30, 'Slava');
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: k8s-program
+  name: user-postgres
+  labels:
+    app: user-postgres
+    tier: database
+spec:
+  ports:
+    - port: 5432
+      targetPort: 5432
+  selector:
+    app: user-postgres
+    tier: database
+  type: NodePort
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: k8s-program
+  name: user-postgres
+  labels:
+    app: user-postgres
+    tier: database
+spec:
+  selector:
+    matchLabels:
+      app: user-postgres
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: user-postgres
+        tier: database
+    spec:
+      containers:
+        - name: user-postgres
+          image: postgres:15-alpine3.17
+          imagePullPolicy: "IfNotPresent"
+          env:
+            - name: POSTGRES_DB
+              value: users
+            - name: POSTGRES_USER
+              value: jdbc_user
+            - name: POSTGRES_PASSWORD
+              value: passw0rd
+          ports:
+            - containerPort: 5432
+              name: user-postgres
+          volumeMounts:
+            - name: user-postgres-claim0
+              mountPath: /var/lib/postgresql/data
+
+            - mountPath: /docker-entrypoint-initdb.d
+              name: user-postgres-initdb
+      volumes:
+        - name: user-postgres-claim0
+          persistentVolumeClaim:
+            claimName: user-postgres-claim0
+
+        - name: user-postgres-initdb
+          configMap:
+            name: user-postgres-initdb-config
