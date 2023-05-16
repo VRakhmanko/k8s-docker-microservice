@@ -14,6 +14,7 @@ spec:
     - protocol: "TCP"
       port: 18081
       targetPort: 18081
+      nodePort: 18081
   selector:
     app: post
   type: NodePort
@@ -40,6 +41,7 @@ spec:
     spec:
       containers:
         - image: epamviachaslaurakhmanko/post-service:1.0.0
+          imagePullPolicy: Always
           name: post
           ports:
             - containerPort: 18081
@@ -64,6 +66,7 @@ spec:
     - protocol: "TCP"
       port: 18080
       targetPort: 18080
+      nodePort: 18080
   selector:
     app: user
   type: NodePort
@@ -94,6 +97,7 @@ spec:
             claimName: user-pv-claim
       containers:
         - image: epamviachaslaurakhmanko/user-service:1.0.0
+          imagePullPolicy: Always
           name: user
           ports:
             - containerPort: 18080
