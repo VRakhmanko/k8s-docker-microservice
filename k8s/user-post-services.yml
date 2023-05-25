@@ -62,6 +62,31 @@ spec:
                   optional: false
             - name: UserHostName
               value: user-service
+          startupProbe:
+            httpGet:
+              path: /actuator/health/liveness
+              port: 18081
+            initialDelaySeconds: 60
+            terminationGracePeriodSeconds: 2
+          readinessProbe:
+            httpGet:
+              path: /actuator/health/liveness
+              port: 18081
+            periodSeconds: 20
+            timeoutSeconds: 10
+            failureThreshold: 3
+            successThreshold: 1
+            initialDelaySeconds: 60
+          livenessProbe:
+            httpGet:
+              path: /actuator/health/liveness
+              port: 18081
+            periodSeconds: 20
+            timeoutSeconds: 10
+            failureThreshold: 3
+            successThreshold: 1
+            initialDelaySeconds: 60
+            terminationGracePeriodSeconds: 2
 
 ---
 apiVersion: v1
@@ -127,3 +152,28 @@ spec:
           volumeMounts:
             - mountPath: "/usr/share"
               name: user-pv-storage
+          startupProbe:
+            httpGet:
+              path: /actuator/health/liveness
+              port: 18080
+            initialDelaySeconds: 60
+            terminationGracePeriodSeconds: 2
+          readinessProbe:
+            httpGet:
+              path: /actuator/health/liveness
+              port: 18080
+            periodSeconds: 20
+            timeoutSeconds: 10
+            failureThreshold: 3
+            successThreshold: 1
+            initialDelaySeconds: 60
+          livenessProbe:
+            httpGet:
+              path: /actuator/health/liveness
+              port: 18080
+            periodSeconds: 20
+            timeoutSeconds: 10
+            failureThreshold: 3
+            successThreshold: 1
+            initialDelaySeconds: 60
+            terminationGracePeriodSeconds: 2

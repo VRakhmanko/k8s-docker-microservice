@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7740ddac-1c86-4650-9e64-bb2b150fde0e" name="Changes" comment="k8s - add postman collection">
-      <change afterPath="$PROJECT_DIR$/k8s/user-post-db-secrets.yml" afterDir="false" />
+    <list default="true" id="7740ddac-1c86-4650-9e64-bb2b150fde0e" name="Changes" comment="lab3 - setup probes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Readme" beforeDir="false" afterPath="$PROJECT_DIR$/Readme" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k8s/database-via-statefulset.yml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/database-via-statefulset.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k8s/user-post-services.yml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/user-post-services.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,7 +139,14 @@
       <recent name="rest" />
     </key>
   </component>
-  <component name="RunManager" selected="Database Script.add-user-dummy-data.sql">
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.PostApplication">
     <configuration name="add-user-dummy-data.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
       <script-file value="$PROJECT_DIR$/add-user-dummy-data.sql" />
       <script-mode>FILE</script-mode>
@@ -245,7 +248,7 @@
       <workItem from="1683734212479" duration="1386000" />
       <workItem from="1683736634610" duration="30547000" />
       <workItem from="1684320341180" duration="576000" />
-      <workItem from="1684320939682" duration="14136000" />
+      <workItem from="1684320939682" duration="24671000" />
     </task>
     <task id="LOCAL-00001" summary="share project">
       <created>1681901542427</created>
@@ -324,7 +327,28 @@
       <option name="project" value="LOCAL" />
       <updated>1684313229279</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="lab3 - config secrets">
+      <created>1685015733666</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1685015733666</updated>
+    </task>
+    <task id="LOCAL-00013" summary="lab3 - config secrets">
+      <created>1685015777377</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1685015777377</updated>
+    </task>
+    <task id="LOCAL-00014" summary="lab3 - setup probes">
+      <created>1685032832558</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1685032832558</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -353,7 +377,9 @@
     <MESSAGE value="k8s - lab2 HW" />
     <MESSAGE value="k8s - lab2 HW - add missed env value" />
     <MESSAGE value="k8s - add postman collection" />
-    <option name="LAST_COMMIT_MESSAGE" value="k8s - add postman collection" />
+    <MESSAGE value="lab3 - config secrets" />
+    <MESSAGE value="lab3 - setup probes" />
+    <option name="LAST_COMMIT_MESSAGE" value="lab3 - setup probes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

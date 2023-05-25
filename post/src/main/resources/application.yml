@@ -25,3 +25,14 @@ clients:
   service:
     users:
       baseurl: http://${UserHostName:localhost}:18080/users/
+
+management:
+  endpoint:
+    health:
+      probes:
+        enabled: true
+  health:
+    livenessState:
+      enabled: true
+    readinessState:
+      enabled: true

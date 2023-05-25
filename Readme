@@ -1,5 +1,7 @@
-Commands:
+Use Lens to maintain your k8s:
+https://github.com/lensapp/lens
 
+Commands:
 docker ps  - show running ps and theirs status/health
     add actuator to app
 docker network ls
@@ -48,3 +50,9 @@ echo -n "passw0rd"|base64
 echo -n "cGFzc3cwcmQ="|base64 -d
 Secret training:
 https://www.youtube.com/watch?v=2EupvRObHqI
+
+Probe:
+Trainings:
+https://www.youtube.com/watch?v=BgADHZ2JTUM
+
+kubectl get events --watch -n=k8s-program   - log events monitor via terminal
