@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7740ddac-1c86-4650-9e64-bb2b150fde0e" name="Changes" comment="k8s - lab2 HW - add nodeport values">
+    <list default="true" id="7740ddac-1c86-4650-9e64-bb2b150fde0e" name="Changes" comment="k8s - add postman collection">
+      <change afterPath="$PROJECT_DIR$/k8s/user-post-db-secrets.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Readme" beforeDir="false" afterPath="$PROJECT_DIR$/Readme" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/k8s/database-via-statefulset.yml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/database-via-statefulset.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/k8s/user-post-services.yml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/user-post-services.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -98,7 +101,7 @@
     &quot;project.structure.proportion&quot;: &quot;0.27539062&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.23143564&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;3702b8609af45774287724c7b45afd43&quot;
+    &quot;spring.configuration.checksum&quot;: &quot;dbc22460a3e46e4f3c9b5d15f739304a&quot;
   },
   &quot;keyToStringList&quot;: {
     &quot;DatabaseDriversLRU&quot;: [
@@ -241,6 +244,8 @@
       <workItem from="1683732955198" duration="1243000" />
       <workItem from="1683734212479" duration="1386000" />
       <workItem from="1683736634610" duration="30547000" />
+      <workItem from="1684320341180" duration="576000" />
+      <workItem from="1684320939682" duration="14136000" />
     </task>
     <task id="LOCAL-00001" summary="share project">
       <created>1681901542427</created>
@@ -312,7 +317,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684144213375</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="k8s - add postman collection">
+      <created>1684313229279</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1684313229279</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -340,7 +352,8 @@
     <MESSAGE value="minor fixes" />
     <MESSAGE value="k8s - lab2 HW" />
     <MESSAGE value="k8s - lab2 HW - add missed env value" />
-    <option name="LAST_COMMIT_MESSAGE" value="k8s - lab2 HW - add missed env value" />
+    <MESSAGE value="k8s - add postman collection" />
+    <option name="LAST_COMMIT_MESSAGE" value="k8s - add postman collection" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -1,0 +1,387 @@
+{
+	"info": {
+		"_postman_id": "c0a63887-124d-4dc6-bdb8-a01a1775ea03",
+		"name": "k8s-docker-microservice",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3831281"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"1\",\r\n    \"username\": \"Vova\",\r\n    \"amountOfPosts\": \"10\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:30080/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "30080",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create User Slava",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"11\",\r\n    \"username\": \"Slava\",\r\n    \"amountOfPosts\": \"10\"\r\n}\r\n        ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:18080/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "18080",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create User Slava Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"161\",\r\n    \"username\": \"Evgenii\",\r\n    \"amountOfPosts\": \"1000\"\r\n}\r\n        ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:18080/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "18080",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add User Post",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:18080/users/1/amountOfPosts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "18080",
+							"path": [
+								"users",
+								"1",
+								"amountOfPosts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User Post",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:18080/users/1/amountOfPosts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "18080",
+							"path": [
+								"users",
+								"1",
+								"amountOfPosts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:30080/users/10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "30080",
+							"path": [
+								"users",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:18080/users/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "18080",
+							"path": [
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put User",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"1\",\r\n    \"username\": \"Uladzimir\",\r\n    \"amountOfPosts\": \"9\"\r\n}\r\n        ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:18080/users/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "18080",
+							"path": [
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Post",
+			"item": [
+				{
+					"name": "Create Post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 12,\r\n    \"authorId\": 10,\r\n    \"text\": \"Hi friends, I recently watched amazing movie at the cinema\",\r\n    \"postedAt\": \"28-09-2022\"\r\n}\r\n        ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:30081/posts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "30081",
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"authorId\": 1,\r\n    \"text\": \"Hi friends, Post\",\r\n    \"postedAt\": \"28-09-2022\"\r\n}\r\n        ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:30081/posts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "30081",
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 12,\r\n    \"authorId\": 1,\r\n    \"text\": \"Hi friends, I recently watched amazing movie\",\r\n    \"postedAt\": \"28-09-2022\"\r\n}\r\n        ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:18081/posts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "18081",
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Post",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:18081/posts/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "18081",
+							"path": [
+								"posts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Post Copy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:30492/greeting",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "30492",
+							"path": [
+								"greeting"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Post",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:18081/posts/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "18081",
+							"path": [
+								"posts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put Post",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"authorId\": 1,\r\n    \"text\": \"Hooray, Milano!\",\r\n    \"postedAt\": \"28-09-2022\"\r\n}\r\n     \r\n        ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:18081/posts/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "18081",
+							"path": [
+								"posts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

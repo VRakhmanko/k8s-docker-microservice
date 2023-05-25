@@ -41,3 +41,10 @@ kubectl exec --stdin --tty <pod_name> -- /bin/bash
 To test application and male the service available out of cluster
 check bounded ports using: get services and run port forward:
 kubectl port-forward service/user-service 18080:18080
+
+Lab3.
+Encode/decode data for k8s secrets
+echo -n "passw0rd"|base64
+echo -n "cGFzc3cwcmQ="|base64 -d
+Secret training:
+https://www.youtube.com/watch?v=2EupvRObHqI

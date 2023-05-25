@@ -46,12 +46,20 @@ spec:
           ports:
             - containerPort: 18081
           env:
-            - name: DbPassword
-              value: passw0rd
             - name: DbUserHost
               value: post-postgres
             - name: DbUser
-              value: jdbc_post
+              valueFrom:
+                secretKeyRef:
+                  name: post-postgresql-db-secret
+                  key: post-db-user
+                  optional: false
+            - name: DbPassword
+              valueFrom:
+                secretKeyRef:
+                  name: post-postgresql-db-secret
+                  key: post-db-password
+                  optional: false
             - name: UserHostName
               value: user-service
 
@@ -103,11 +111,19 @@ spec:
             - containerPort: 18080
           env:
             - name: DbPassword
-              value: passw0rd
+              valueFrom:
+                secretKeyRef:
+                  name: user-postgresql-db-secret
+                  key: POSTGRES_PASSWORD
+                  optional: false
             - name: DbUserHost
               value: user-postgres
             - name: DbUser
-              value: jdbc_user
+              valueFrom:
+                secretKeyRef:
+                  name: user-postgresql-db-secret
+                  key: POSTGRES_USER
+                  optional: false
           volumeMounts:
             - mountPath: "/usr/share"
               name: user-pv-storage
