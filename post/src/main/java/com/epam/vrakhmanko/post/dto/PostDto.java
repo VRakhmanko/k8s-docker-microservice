@@ -25,6 +25,7 @@ public class PostDto {
     private Integer authorId;
 
     private String text;
+    private String topic;
 
     @DateTimeFormat(pattern = "dd-MM-YYYY")
     @JsonFormat(pattern = "dd-MM-yyyy", shape = JsonFormat.Shape.STRING)
