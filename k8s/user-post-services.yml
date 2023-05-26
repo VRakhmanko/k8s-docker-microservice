@@ -40,7 +40,7 @@ spec:
         app: post
     spec:
       containers:
-        - image: epamviachaslaurakhmanko/post-service:1.1.0
+        - image: epamviachaslaurakhmanko/post-service:1.0.0
           imagePullPolicy: Always
           name: post
           ports:
@@ -64,13 +64,13 @@ spec:
               value: user-service
           startupProbe:
             httpGet:
-              path: /actuator/health/liveness
+              path: /actuator/health/readiness
               port: 18081
             initialDelaySeconds: 60
             terminationGracePeriodSeconds: 2
           readinessProbe:
             httpGet:
-              path: /actuator/health/liveness
+              path: /actuator/health/readiness
               port: 18081
             periodSeconds: 20
             timeoutSeconds: 10
@@ -154,13 +154,13 @@ spec:
               name: user-pv-storage
           startupProbe:
             httpGet:
-              path: /actuator/health/liveness
+              path: /actuator/health/readiness
               port: 18080
             initialDelaySeconds: 60
             terminationGracePeriodSeconds: 2
           readinessProbe:
             httpGet:
-              path: /actuator/health/liveness
+              path: /actuator/health/readiness
               port: 18080
             periodSeconds: 20
             timeoutSeconds: 10
