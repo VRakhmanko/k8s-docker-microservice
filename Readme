@@ -1,5 +1,7 @@
-Commands:
+Use Lens to maintain your k8s:
+https://github.com/lensapp/lens
 
+Commands:
 docker ps  - show running ps and theirs status/health
     add actuator to app
 docker network ls
@@ -41,3 +43,47 @@ kubectl exec --stdin --tty <pod_name> -- /bin/bash
 To test application and male the service available out of cluster
 check bounded ports using: get services and run port forward:
 kubectl port-forward service/user-service 18080:18080
+
+Lab3.
+Sub-task 1: Secrets and config-maps
+
+1. Add Secrets object to your k8s manifest to store database username and password.
+2. Add config maps to store environment variables for application deployments.
+3. Add sql scripts to init databases (create tables) to config maps.
+4. Change k8s Deployment and StatefulSet objects to load these secrets and config-maps.
+Encode/decode data for k8s secrets
+echo -n "passw0rd"|base64
+echo -n "cGFzc3cwcmQ="|base64 -d
+Secret training:
+https://www.youtube.com/watch?v=2EupvRObHqI
+
+
+Sub-task 2: Liveness and Readiness probes
+1. Add endpoints for health checks at your applications.
+2. Add startup, liveness and readiness probes for your Deployment objects at k8s manifest.
+3. Add startup, liveness and readiness probes for your StatefulSet objects at k8s manifest.
+Trainings:
+https://www.youtube.com/watch?v=BgADHZ2JTUM
+
+kubectl get events --watch -n=k8s-program   - log events monitor via terminal
+kubectl port-forward service/post-postgres 15432:15432
+
+Sub-task 3: Deployment strategies
+In this module you will add a field to one of your services, and perform Rolling-update deployment.
+
+1. To Post service add a new field topic (:String). This is the topic for the post. You can specify it when creating a new post and when updating existing post. This field also should be returned at the responses for POST, PUT and GET operations.
+2. Build a new docker image of application with changes and push it to the Docker Hub (specify another version of container).
+3. Add Rolling-update deployment strategy to your deployments at manifest files and apply the  manifest, so the old versions of microservices are deployed and running.
+4. Set app version of app containers to the new one and apply manifest one more time. Make sure that new changes are deployed.
+
+
+Sub-task 4: Deployment history
+As you deployed a new version of your application, you can see the history of your deployments. Your task is to roll back to previous version of your deployment without changing your manifest files.
+Put in comments the solution of this task.
+
+kubectl set image deployment/post post=epamviachaslaurakhmanko/post-service:1.1.0 -n=k8s-program
+kubectl describe deployment/post -n=k8s-program
+kubectl get rs -n=k8s-program
+kubectl rollout history deployment/post -n=k8s-program
+kubectl rollout history deployment/post -n=k8s-program --revision=9
+kubectl rollout undo deployment/post --to-revision=9 -n=k8s-program

@@ -38,6 +38,46 @@ spec:
           envFrom:
             - configMapRef:
                 name: post-postgresql-db-config
+          env:
+            - name: POSTGRES_DB
+              valueFrom:
+                secretKeyRef:
+                  name: post-postgresql-db-secret
+                  key: post-db-name
+                  optional: false
+            - name: POSTGRES_USER
+              valueFrom:
+                secretKeyRef:
+                  name: post-postgresql-db-secret
+                  key: post-db-user
+                  optional: false
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: post-postgresql-db-secret
+                  key: post-db-password
+                  optional: false
+          startupProbe:
+            tcpSocket:
+              port: 5432
+            initialDelaySeconds: 20
+          readinessProbe:
+            tcpSocket:
+              port: 5432
+            periodSeconds: 20
+            timeoutSeconds: 5
+            failureThreshold: 3
+            successThreshold: 1
+            initialDelaySeconds: 20
+          livenessProbe:
+            tcpSocket:
+              port: 5432
+            periodSeconds: 20
+            timeoutSeconds: 5
+            failureThreshold: 3
+            successThreshold: 1
+            initialDelaySeconds: 20
+            terminationGracePeriodSeconds: 5
   # Volume Claim
   volumeClaimTemplates:
     - metadata:
@@ -71,51 +111,8 @@ metadata:
   labels:
     app: post-postgresql-db
 data:
-  POSTGRES_DB: posts
-  POSTGRES_USER: jdbc_post
-  POSTGRES_PASSWORD: passw0rd
   PGDATA: /data/pgdata
-  init.sql: |
-    create table if not exists post
-    (
-        id        integer not null
-            primary key
-            constraint post_id_check
-                check (id >= 1),
-        author_id integer not null
-            constraint post_author_id_check
-                check (author_id >= 1),
-        posted_at date,
-        "text"    varchar(255)
-    );
 
-    insert into post(id, author_id, posted_at, "text")
-    values (2, 10, '04-01-1987', 'Hooray!, 1 year'),
-           (3, 10, '04-01-1988', 'Hooray!, 2 year'),
-           (4, 10, '04-01-1989', 'Hooray!, 3 year'),
-           (5, 10, '04-01-1990', 'Hooray!, 4 year'),
-           (6, 10, '04-01-1991', 'Hooray!, 5 year'),
-           (7, 10, '04-01-1992', 'Hooray!, 6 year'),
-           (8, 10, '04-01-1993', 'Hooray!, 7 year'),
-           (9, 10, '04-01-1993', 'Hooray!, 8 year'),
-           (10, 10, '04-01-1993', 'Hooray!, 9 year'),
-           (11, 10, '04-01-1993', 'Hooray!, 10 year'),
-           (12, 20, '04-01-1987', 'Hooray!, 1 year'),
-           (13, 20, '04-01-1988', 'Hooray!, 2 year'),
-           (14, 20, '04-01-1989', 'Hooray!, 3 year'),
-           (15, 20, '04-01-1990', 'Hooray!, 4 year'),
-           (16, 20, '04-01-1991', 'Hooray!, 5 year'),
-           (17, 20, '04-01-1992', 'Hooray!, 6 year'),
-           (18, 20, '04-01-1993', 'Hooray!, 7 year'),
-           (22, 30, '04-01-1987', 'Hooray!, 1 year'),
-           (23, 30, '04-01-1988', 'Hooray!, 2 year'),
-           (24, 30, '04-01-1989', 'Hooray!, 3 year'),
-           (25, 30, '04-01-1990', 'Hooray!, 4 year'),
-           (26, 30, '04-01-1991', 'Hooray!, 5 year'),
-           (27, 30, '04-01-1992', 'Hooray!, 6 year'),
-           (28, 30, '04-01-1993', 'Hooray!, 7 year');
-        
-        
 ---
 apiVersion: apps/v1
 kind: StatefulSet
@@ -151,6 +148,38 @@ spec:
           envFrom:
             - configMapRef:
                 name: user-postgresql-db-config
+            - secretRef:
+                name: user-postgresql-db-secret
+          startupProbe:
+            exec:
+              command:
+                - /bin/sh
+                - -c
+                - exec pg_isready -U "${POSTGRES_USER}" -d "${POSTGRES_DB}"
+            initialDelaySeconds: 20
+          readinessProbe:
+            exec:
+              command:
+                - /bin/sh
+                - -c
+                - exec pg_isready -U "${POSTGRES_USER}" -d "${POSTGRES_DB}"
+            periodSeconds: 10
+            timeoutSeconds: 2
+            failureThreshold: 3
+            successThreshold: 1
+            initialDelaySeconds: 20
+          livenessProbe:
+            exec:
+              command:
+                - /bin/sh
+                - -c
+                - exec pg_isready -U "${POSTGRES_USER}" -d "${POSTGRES_DB}"
+            periodSeconds: 10
+            timeoutSeconds: 2
+            failureThreshold: 3
+            successThreshold: 1
+            initialDelaySeconds: 20
+            terminationGracePeriodSeconds: 2
   # Volume Claim
   volumeClaimTemplates:
     - metadata:
@@ -184,9 +213,6 @@ metadata:
   labels:
     app: user-postgresql-db
 data:
-  POSTGRES_DB: users
-  POSTGRES_USER: jdbc_user
-  POSTGRES_PASSWORD: passw0rd
   PGDATA: /data/pgdata
   init.sql: |
     create table if not exists users
