@@ -4,19 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7740ddac-1c86-4650-9e64-bb2b150fde0e" name="Changes" comment="lab3 - setup probes">
-      <change afterPath="$PROJECT_DIR$/post/src/main/java/com/epam/vrakhmanko/post/config/FlywayConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/post/src/main/resources/db/migration/V2__init.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/post/src/main/resources/db/migration/V3__alter_post_by_add_topic_column.sql" afterDir="false" />
+    <list default="true" id="7740ddac-1c86-4650-9e64-bb2b150fde0e" name="Changes" comment="lab3 - sub-task 4 fix">
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Readme" beforeDir="false" afterPath="$PROJECT_DIR$/Readme" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k8s/database-via-deployment.yml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/database-via-deployment.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k8s/database-via-statefulset.yml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/database-via-statefulset.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k8s/user-post-services.yml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/user-post-services.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/post/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/post/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/post/src/main/java/com/epam/vrakhmanko/post/dto/PostDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/post/src/main/java/com/epam/vrakhmanko/post/dto/PostDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/post/src/main/java/com/epam/vrakhmanko/post/repository/domain/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/post/src/main/java/com/epam/vrakhmanko/post/repository/domain/Post.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/post/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/post/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,7 +148,12 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.PostApplication">
+  <component name="RunManager" selected="Database Script.V3__alter_post_by_add_topic_column.sql">
+    <configuration name="V3__alter_post_by_add_topic_column.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
+      <script-file value="$PROJECT_DIR$/post/src/main/resources/db/migration/V3__alter_post_by_add_topic_column.sql" />
+      <script-mode>FILE</script-mode>
+      <method v="2" />
+    </configuration>
     <configuration name="add-user-dummy-data.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
       <script-file value="$PROJECT_DIR$/add-user-dummy-data.sql" />
       <script-mode>FILE</script-mode>
@@ -228,6 +223,7 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Database Script.V3__alter_post_by_add_topic_column.sql" />
       <item itemvalue="Database Script.add-user-dummy-data.sql" />
       <item itemvalue="Docker.User/Dockerfile" />
       <item itemvalue="Gradle.User [bootJar]" />
@@ -236,11 +232,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Database Script.V3__alter_post_by_add_topic_column.sql" />
         <item itemvalue="Spring Boot.UserApplication" />
         <item itemvalue="Database Script.add-user-dummy-data.sql" />
         <item itemvalue="Gradle.User [bootJar]" />
         <item itemvalue="Docker.User/Dockerfile" />
-        <item itemvalue="Spring Boot.UserApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -267,7 +263,7 @@
       <workItem from="1683734212479" duration="1386000" />
       <workItem from="1683736634610" duration="30547000" />
       <workItem from="1684320341180" duration="576000" />
-      <workItem from="1684320939682" duration="33901000" />
+      <workItem from="1684320939682" duration="43758000" />
     </task>
     <task id="LOCAL-00001" summary="share project">
       <created>1681901542427</created>
@@ -374,7 +370,42 @@
       <option name="project" value="LOCAL" />
       <updated>1685083814574</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="lab3 - add topic column to post, create new image version">
+      <created>1685095273877</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1685095273877</updated>
+    </task>
+    <task id="LOCAL-00017" summary="lab3 - fix probe issue">
+      <created>1685099559430</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1685099559430</updated>
+    </task>
+    <task id="LOCAL-00018" summary="lab3 - fix probes links issue">
+      <created>1685099571484</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1685099571484</updated>
+    </task>
+    <task id="LOCAL-00019" summary="lab3 - sub-task 4">
+      <created>1685099741583</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1685099741583</updated>
+    </task>
+    <task id="LOCAL-00020" summary="lab3 - sub-task 4 fix">
+      <created>1685354781920</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1685354781920</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -405,7 +436,12 @@
     <MESSAGE value="k8s - add postman collection" />
     <MESSAGE value="lab3 - config secrets" />
     <MESSAGE value="lab3 - setup probes" />
-    <option name="LAST_COMMIT_MESSAGE" value="lab3 - setup probes" />
+    <MESSAGE value="lab3 - add topic column to post, create new image version" />
+    <MESSAGE value="lab3 - fix probe issue" />
+    <MESSAGE value="lab3 - fix probes links issue" />
+    <MESSAGE value="lab3 - sub-task 4" />
+    <MESSAGE value="lab3 - sub-task 4 fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="lab3 - sub-task 4 fix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
