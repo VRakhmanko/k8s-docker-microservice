@@ -14,7 +14,7 @@ spring:
     enabled: false
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: none
     defer-datasource-initialization: true
   sql:
     init:
