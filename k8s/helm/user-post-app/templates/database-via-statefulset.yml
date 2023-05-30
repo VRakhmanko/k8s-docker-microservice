@@ -2,7 +2,7 @@
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  namespace: k8s-program
+  namespace: {{ .Values.namespace }}
   name: post-postgresql-db
 spec:
   serviceName: post-postgresql-db-service
@@ -87,7 +87,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  namespace: k8s-program
+  namespace: {{ .Values.namespace }}
   name: post-postgres
 spec:
   selector:
@@ -101,10 +101,12 @@ spec:
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  namespace: k8s-program
+  namespace: {{ .Values.namespace }}
   name: post-postgresql-db-config
   labels:
     app: post-postgresql-db
+    current-date: {{ include "user-post-app.current-date" . }}
+    version: {{ include "user-post-app.version" . }}
 data:
   PGDATA: /data/pgdata
 
@@ -112,7 +114,7 @@ data:
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  namespace: k8s-program
+  namespace: {{ .Values.namespace }}
   name: user-postgresql-db
 spec:
   serviceName: user-postgresql-db-service
@@ -189,7 +191,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  namespace: k8s-program
+  namespace: {{ .Values.namespace }}
   name: user-postgres
 spec:
   selector:
@@ -203,10 +205,12 @@ spec:
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  namespace: k8s-program
+  namespace: {{ .Values.namespace }}
   name: user-postgresql-db-config
   labels:
     app: user-postgresql-db
+    current-date: {{ include "user-post-app.current-date" . }}
+    version: {{ include "user-post-app.version" . }}
 data:
   PGDATA: /data/pgdata
   init.sql: |

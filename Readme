@@ -87,3 +87,11 @@ kubectl get rs -n=k8s-program
 kubectl rollout history deployment/post -n=k8s-program
 kubectl rollout history deployment/post -n=k8s-program --revision=9
 kubectl rollout undo deployment/post --to-revision=9 -n=k8s-program
+
+Lab4.
+helm create user-post-app
+helm install user-post-apps .\user-post-app\ --create-namespace -n k8s-program --dry-run --atomic
+helm install user-post-apps .\user-post-app\ --create-namespace -n=k8s-program --set replicaCount=49
+helm list --all-namespaces
+helm uninstall user-post-apps  -n k8s-program
+helm upgrade user-post-apps .\user-post-app\ --debug --dry-run

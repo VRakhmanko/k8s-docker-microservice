@@ -1,0 +1,147 @@
+#---
+#apiVersion: v1
+#kind: Namespace
+#metadata:
+#  name: k8s-program
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: k8s-program
+  name: post
+spec:
+  replicas: 2
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  selector:
+    matchLabels:
+      app: post
+  template:
+    metadata:
+      labels:
+        app: post
+    spec:
+      containers:
+        - image: epamviachaslaurakhmanko/post-service:1.0.0
+          imagePullPolicy: Always
+          name: post
+          ports:
+            - containerPort: 18081
+          env:
+            - name: DbUserHost
+              value: post-postgres
+            - name: DbUser
+              valueFrom:
+                secretKeyRef:
+                  name: post-postgresql-db-secret
+                  key: post-db-user
+                  optional: false
+            - name: DbPassword
+              valueFrom:
+                secretKeyRef:
+                  name: post-postgresql-db-secret
+                  key: post-db-password
+                  optional: false
+            - name: UserHostName
+              value: user-service
+          startupProbe:
+            httpGet:
+              path: /actuator/health/readiness
+              port: 18081
+            initialDelaySeconds: 60
+            terminationGracePeriodSeconds: 2
+          readinessProbe:
+            httpGet:
+              path: /actuator/health/readiness
+              port: 18081
+            periodSeconds: 20
+            timeoutSeconds: 10
+            failureThreshold: 3
+            successThreshold: 1
+            initialDelaySeconds: 60
+          livenessProbe:
+            httpGet:
+              path: /actuator/health/liveness
+              port: 18081
+            periodSeconds: 20
+            timeoutSeconds: 10
+            failureThreshold: 3
+            successThreshold: 1
+            initialDelaySeconds: 60
+            terminationGracePeriodSeconds: 2
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: k8s-program
+  name: user
+spec:
+  replicas: 2
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  selector:
+    matchLabels:
+      app: user
+  template:
+    metadata:
+      labels:
+        app: user
+    spec:
+      volumes:
+        - name: user-pv-storage
+          persistentVolumeClaim:
+            claimName: user-pv-claim
+      containers:
+        - image: epamviachaslaurakhmanko/user-service:1.0.0
+          imagePullPolicy: Always
+          name: user
+          ports:
+            - containerPort: 18080
+          env:
+            - name: DbPassword
+              valueFrom:
+                secretKeyRef:
+                  name: user-postgresql-db-secret
+                  key: POSTGRES_PASSWORD
+                  optional: false
+            - name: DbUserHost
+              value: user-postgres
+            - name: DbUser
+              valueFrom:
+                secretKeyRef:
+                  name: user-postgresql-db-secret
+                  key: POSTGRES_USER
+                  optional: false
+          volumeMounts:
+            - mountPath: "/usr/share"
+              name: user-pv-storage
+          startupProbe:
+            httpGet:
+              path: /actuator/health/readiness
+              port: 18080
+            initialDelaySeconds: 60
+            terminationGracePeriodSeconds: 2
+          readinessProbe:
+            httpGet:
+              path: /actuator/health/readiness
+              port: 18080
+            periodSeconds: 20
+            timeoutSeconds: 10
+            failureThreshold: 3
+            successThreshold: 1
+            initialDelaySeconds: 60
+          livenessProbe:
+            httpGet:
+              path: /actuator/health/liveness
+              port: 18080
+            periodSeconds: 20
+            timeoutSeconds: 10
+            failureThreshold: 3
+            successThreshold: 1
+            initialDelaySeconds: 60
+            terminationGracePeriodSeconds: 2
