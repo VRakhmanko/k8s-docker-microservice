@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  namespace: {{ .Values.namespaceName }}
+  namespace: {{ .Values.namespace }}
   name: user-pv
   labels:
     type: local
@@ -18,7 +18,7 @@ spec:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  namespace: {{ .Values.namespaceName }}
+  namespace: {{ .Values.namespace }}
   name: user-pv-claim
   labels:
     app: user

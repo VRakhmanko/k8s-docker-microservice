@@ -2,7 +2,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  namespace: {{ .Values.namespaceName }}
+  namespace: {{ .Values.namespace }}
   name: post
 spec:
   replicas: {{ .Values.replicaCount }}
@@ -59,7 +59,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  namespace: {{ .Values.namespaceName }}
+  namespace: {{ .Values.namespace }}
   name: user
 spec:
   replicas: {{ .Values.replicaCount }}

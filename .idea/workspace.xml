@@ -6,13 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="7740ddac-1c86-4650-9e64-bb2b150fde0e" name="Changes" comment="lab4 - both sub-tasks">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Readme" beforeDir="false" afterPath="$PROJECT_DIR$/Readme" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/_helpers.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/_helpers.tpl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/database-via-statefulset.yml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/database-via-statefulset.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/namespace.yml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/namespace.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/user-post-db-secrets.yml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/user-post-db-secrets.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/user-post-deployments.yml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/user-post-deployments.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/user-post-services.yml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/user-post-services.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/user-service-persistent-volume.yml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/user-service-persistent-volume.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k8s/helm/user-post-app/values.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/helm/user-post-app/values.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -270,7 +271,11 @@
       <workItem from="1684320341180" duration="576000" />
       <workItem from="1684320939682" duration="33901000" />
       <workItem from="1685368337333" duration="948000" />
-      <workItem from="1685369444094" duration="34296000" />
+      <workItem from="1685369444094" duration="36975000" />
+      <workItem from="1686294339550" duration="2807000" />
+      <workItem from="1686300099346" duration="5000" />
+      <workItem from="1686300122696" duration="327000" />
+      <workItem from="1686300466818" duration="375000" />
     </task>
     <task id="LOCAL-00001" summary="share project">
       <created>1681901542427</created>
@@ -440,7 +445,21 @@
       <option name="project" value="LOCAL" />
       <updated>1685462755367</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="lab4 - both sub-tasks">
+      <created>1685613889226</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1685613889226</updated>
+    </task>
+    <task id="LOCAL-00026" summary="lab4 - both sub-tasks">
+      <created>1685616231450</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1685616231451</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

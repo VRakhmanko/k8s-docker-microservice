@@ -1,9 +1,9 @@
-{{- if hasKey .Values "namespaceName" }}
+{{- if hasKey .Values "namespace" }}
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: {{ .Values.namespaceName }}
-  {{- if hasKey .Values "namespaceAttributes" }}
-  {{ toYaml .Values.namespaceAttributes | indent 2 }}
+  name: {{ .Values.namespace }}
+  {{- if hasKey .Values "namespaceName" }}
+  {{ toYaml .Values.namespaceName | indent 2 }}
   {{ end -}}
   {{- end }}
