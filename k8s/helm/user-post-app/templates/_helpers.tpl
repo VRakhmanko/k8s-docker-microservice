@@ -2,7 +2,7 @@
 Create chart version.
 */}}
 {{- define "user-post-app.version" -}}
-{{- printf "%s" .Chart.Version }}
+{{- .Chart.Version }}
 {{- end }}
 
 {{/*
@@ -15,6 +15,6 @@ Create chart current date.
 {{/*
 Expand the namespace of the chart.
 */}}
-{{- define "project.namespace" -}}
-{{- default .Release.Namespace .Values.namespaceName  -}}
+{{- define "k8s-docker-microservice.namespace" -}}
+{{- default .Release.Namespace .Values.namespace -}}
 {{- end -}}

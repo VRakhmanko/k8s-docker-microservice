@@ -1,6 +1,0 @@
-#Became useless after adding helm
-# so comment out below.
-#apiVersion: v1
-#kind: Namespace
-#metadata:
-#  name: {{ template "project.namespace" . }}

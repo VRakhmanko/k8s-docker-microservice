@@ -4,15 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7740ddac-1c86-4650-9e64-bb2b150fde0e" name="Changes" comment="lab4 - both sub-tasks">
+    <list default="true" id="7740ddac-1c86-4650-9e64-bb2b150fde0e" name="Changes" comment="lab4 - add namespace creation using default value or via pass cmd parameter">
+      <change afterPath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/namespace.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/post-deployment.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/post-service.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/user-db-secret.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/user-service-persistent-volume.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/user-service.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Readme" beforeDir="false" afterPath="$PROJECT_DIR$/Readme" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/_helpers.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/_helpers.tpl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/database-via-statefulset.yml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/database-via-statefulset.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/namespace.yml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/namespace.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/user-post-db-secrets.yml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/user-post-db-secrets.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/user-post-deployments.yml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/user-post-deployments.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/user-post-services.yml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/user-post-services.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/user-service-persistent-volume.yml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/user-service-persistent-volume.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/database-via-statefulset.yml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/database-via-statefulset.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/namespace.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/user-post-db-secrets.yml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/post-db-secret.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/user-post-deployments.yml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/user-deployment.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/user-post-services.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/user-service-persistent-volume.yml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/user-service-persistent-volume-claim.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -274,7 +281,7 @@
       <workItem from="1686294339550" duration="2807000" />
       <workItem from="1686300099346" duration="5000" />
       <workItem from="1686300122696" duration="327000" />
-      <workItem from="1686300466818" duration="558000" />
+      <workItem from="1686300466818" duration="11316000" />
     </task>
     <task id="LOCAL-00001" summary="share project">
       <created>1681901542427</created>
@@ -472,7 +479,21 @@
       <option name="project" value="LOCAL" />
       <updated>1686300917782</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="lab4 - add namespace creation using default value or via pass cmd parameter">
+      <created>1686301105923</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1686301105923</updated>
+    </task>
+    <task id="LOCAL-00030" summary="lab4 - add namespace creation using default value or via pass cmd parameter">
+      <created>1686304378703</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1686304378703</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -507,7 +528,8 @@
     <MESSAGE value="lab4 - both sub tasks" />
     <MESSAGE value="lab3 - sub-task 4 fix" />
     <MESSAGE value="lab4 - both sub-tasks" />
-    <option name="LAST_COMMIT_MESSAGE" value="lab4 - both sub-tasks" />
+    <MESSAGE value="lab4 - add namespace creation using default value or via pass cmd parameter" />
+    <option name="LAST_COMMIT_MESSAGE" value="lab4 - add namespace creation using default value or via pass cmd parameter" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
