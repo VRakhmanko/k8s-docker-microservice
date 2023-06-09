@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7740ddac-1c86-4650-9e64-bb2b150fde0e" name="Changes" comment="lab4 - both sub-tasks">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Readme" beforeDir="false" afterPath="$PROJECT_DIR$/Readme" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/_helpers.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/_helpers.tpl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/database-via-statefulset.yml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/database-via-statefulset.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/namespace.yml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/namespace.yml" afterDir="false" />
@@ -88,37 +87,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;20&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Education/Kubernetes/wrs2/k8s-docker-microservice/k8s/helm/user-post-app/templates&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.27539062&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.23143564&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;dbc22460a3e46e4f3c9b5d15f739304a&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "20",
+    "last_opened_file_path": "D:/Education/Kubernetes/wrs2/k8s-docker-microservice/k8s/helm/user-post-app/templates",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.27539062",
+    "project.structure.side.proportion": "0.23143564",
+    "settings.editor.selected.configurable": "application.passwordSafe",
+    "spring.configuration.checksum": "dbc22460a3e46e4f3c9b5d15f739304a"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ],
-    &quot;RunConfigurationTargetLRU&quot;: [
-      &quot;0751fb4b-876f-422f-8764-4768d898dabc&quot;
+    "RunConfigurationTargetLRU": [
+      "0751fb4b-876f-422f-8764-4768d898dabc"
     ],
-    &quot;com.intellij.ide.scratch.LRUPopupBuilder$1/&quot;: [
-      &quot;PostgreSQL&quot;
+    "com.intellij.ide.scratch.LRUPopupBuilder$1/": [
+      "PostgreSQL"
     ]
   }
-}</component>
+}]]></component>
   <component name="Push.Settings">
     <force-push-targets>
       <force-push-target remote-path="origin" branch="main" />
@@ -275,7 +274,7 @@
       <workItem from="1686294339550" duration="2807000" />
       <workItem from="1686300099346" duration="5000" />
       <workItem from="1686300122696" duration="327000" />
-      <workItem from="1686300466818" duration="375000" />
+      <workItem from="1686300466818" duration="558000" />
     </task>
     <task id="LOCAL-00001" summary="share project">
       <created>1681901542427</created>
@@ -459,7 +458,21 @@
       <option name="project" value="LOCAL" />
       <updated>1685616231451</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="lab4 - both sub-tasks">
+      <created>1686300846357</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1686300846357</updated>
+    </task>
+    <task id="LOCAL-00028" summary="lab4 - both sub-tasks">
+      <created>1686300917782</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1686300917782</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

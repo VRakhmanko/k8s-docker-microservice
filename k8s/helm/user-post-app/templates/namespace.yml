@@ -1,9 +1,6 @@
-{{- if hasKey .Values "namespace" }}
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: {{ .Values.namespace }}
-  {{- if hasKey .Values "namespaceName" }}
-  {{ toYaml .Values.namespaceName | indent 2 }}
-  {{ end -}}
-  {{- end }}
+#Became useless after adding helm
+# so comment out below.
+#apiVersion: v1
+#kind: Namespace
+#metadata:
+#  name: {{ template "project.namespace" . }}
