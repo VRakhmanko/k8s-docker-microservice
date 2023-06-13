@@ -1,0 +1,60 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: {{ template "k8s-docker-microservice.namespace" . }}
+  name: user
+spec:
+  replicas: {{ .Values.replicaCount }}
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  selector:
+    matchLabels:
+      app: user
+  template:
+    metadata:
+      labels:
+        app: user
+    spec:
+      volumes:
+        - name: user-pv-storage
+          persistentVolumeClaim:
+            claimName: user-pv-claim
+      containers:
+        - image: epamviachaslaurakhmanko/user-service:1.0.0
+          imagePullPolicy: Always
+          name: user
+          ports:
+            - containerPort: 18080
+          env:
+            - name: DbPassword
+              valueFrom:
+                secretKeyRef:
+                  name: user-postgresql-db-secret
+                  key: POSTGRES_PASSWORD
+                  optional: false
+            - name: DbUserHost
+              value: user-postgres
+            - name: DbUser
+              valueFrom:
+                secretKeyRef:
+                  name: user-postgresql-db-secret
+                  key: POSTGRES_USER
+                  optional: false
+          volumeMounts:
+            - mountPath: "/usr/share"
+              name: user-pv-storage
+          startupProbe:
+            httpGet:
+              path: /actuator/health/readiness
+              port: 18080
+          readinessProbe:
+            httpGet:
+              path: /actuator/health/readiness
+              port: 18080
+          livenessProbe:
+            httpGet:
+              path: /actuator/health/liveness
+              port: 18080
