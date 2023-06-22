@@ -4,6 +4,9 @@ kind: Deployment
 metadata:
   namespace: {{ template "k8s-docker-microservice.namespace" . }}
   name: post
+  labels:
+    {{- include "k8s-docker-microservice.labels" . | nindent 4 }}
+    application: posts
 spec:
   replicas: {{ .Values.replicaCount }}
   strategy:
@@ -13,7 +16,6 @@ spec:
   selector:
     matchLabels:
       pod-name: post-service
-      app: post
   template:
     metadata:
       labels:
@@ -21,11 +23,12 @@ spec:
         app: post
     spec:
       containers:
-        - image: epamviachaslaurakhmanko/post-service:1.1.0
+        - name: post-service
+          image: epamviachaslaurakhmanko/post-service:1.1.0
           imagePullPolicy: Always
-          name: post
           ports:
-            - containerPort: 18081
+            - name: http
+              containerPort: 18081
           env:
             - name: DbUserHost
               value: post-postgres
@@ -46,13 +49,14 @@ spec:
           startupProbe:
             httpGet:
               path: /actuator/health/readiness
-              port: 18081
+              port: http
+            periodSeconds: 1
+            failureThreshold: 120
           readinessProbe:
             httpGet:
               path: /actuator/health/readiness
-              port: 18081
+              port: http
           livenessProbe:
             httpGet:
               path: /actuator/health/liveness
-              port: 18081
-            terminationGracePeriodSeconds: 2
+              port: http

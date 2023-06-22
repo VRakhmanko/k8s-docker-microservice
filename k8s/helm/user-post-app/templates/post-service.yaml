@@ -6,6 +6,7 @@ metadata:
   name: post-service
   labels:
     {{- include "k8s-docker-microservice.labels" . | nindent 4 }}
+    application: posts
 spec:
   ports:
     - name: http
@@ -14,4 +15,3 @@ spec:
       targetPort: http
   selector:
     pod-name: post-service
-    app: post
