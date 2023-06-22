@@ -25,4 +25,18 @@ spec:
                 name: http
 
   {{- end }}
+  {{- if .Values.posts.ingress.enabled }}
+  {{- if not (and ( .Values.users.ingress.enabled) (eq .Values.users.ingress.host .Values.posts.ingress.host)) }}
+  - host: {{ .Values.posts.ingress.host }}
+    http:
+      paths:
+  {{- end }}
+        - path: "{{ trimSuffix "/" .Values.posts.ingress.path }}"
+          pathType: Prefix
+          backend:
+            service:
+              name: post-service
+              port:
+                name: http
+  {{- end }}
   {{- end }}

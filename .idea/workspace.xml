@@ -4,21 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7740ddac-1c86-4650-9e64-bb2b150fde0e" name="Changes" comment="lab3 - setup probes">
-      <change afterPath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/ingress.yaml" afterDir="false" />
+    <list default="true" id="7740ddac-1c86-4650-9e64-bb2b150fde0e" name="Changes" comment="lab5 - setup probes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Readme" beforeDir="false" afterPath="$PROJECT_DIR$/Readme" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k8s/helm/user-post-app/Chart.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/helm/user-post-app/Chart.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/_helpers.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/_helpers.tpl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/database-via-statefulset.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/database-via-statefulset.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/post-deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/post-deployment.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/post-service.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/post-service.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/user-db-secret.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/user-db-secret.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/user-deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/user-deployment.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/user-service-persistent-volume-claim.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/user-service-persistent-volume-claim.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/user-service-persistent-volume.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/user-service-persistent-volume.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/user-service.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/user-service.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k8s/helm/user-post-app/values.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/helm/user-post-app/values.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/ingress.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/ingress.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -282,7 +270,7 @@
       <workItem from="1686300122696" duration="327000" />
       <workItem from="1686300466818" duration="11316000" />
       <workItem from="1687366798397" duration="8076000" />
-      <workItem from="1687375342345" duration="15889000" />
+      <workItem from="1687375342345" duration="16767000" />
     </task>
     <task id="LOCAL-00001" summary="share project">
       <created>1681901542427</created>
@@ -494,7 +482,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686304378703</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="lab5 - setup probes">
+      <created>1687425070352</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1687425070352</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -530,7 +525,8 @@
     <MESSAGE value="lab3 - sub-task 4 fix" />
     <MESSAGE value="lab4 - both sub-tasks" />
     <MESSAGE value="lab4 - add namespace creation using default value or via pass cmd parameter" />
-    <option name="LAST_COMMIT_MESSAGE" value="lab4 - add namespace creation using default value or via pass cmd parameter" />
+    <MESSAGE value="lab5 - setup probes" />
+    <option name="LAST_COMMIT_MESSAGE" value="lab5 - setup probes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
