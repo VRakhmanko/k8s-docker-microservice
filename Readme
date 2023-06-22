@@ -98,3 +98,20 @@ helm upgrade user-post-apps .\user-post-app\ --debug --dry-run
 
 kubectl config set-context --current --namespace k8s-program
 
+
+Lab5.
+In this module you will learn how to install ingress controller and route traffic to your applications. Also, you will practice helm.
+Sub-task 1: Ingress
+Install ingress controller using helm chart. (guide)
+Change Services type to ClusterIP to restrict external access.
+Create ingress resource and route your traffic using rules.
+Configure rewrite-target of path using annotations. Example routing: from http://localhost/posts/api/v1/greeting to http://posts:8080/api/v1/greeting. (ref docs)
+
+
+helm upgrade --install ingress-nginx ingress-nginx --repo https://kubernetes.github.io/ingress-nginx -n ingress-nginx --create-namespace
+kubectl get ingressClass
+kubectl get pods -n ingress-nginx
+kubectl get ing -n k8s-program
+
+how to check 503 error:
+https://komodor.com/learn/how-to-fix-kubernetes-service-503-service-unavailable-error/

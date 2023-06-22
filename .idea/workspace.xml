@@ -4,22 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7740ddac-1c86-4650-9e64-bb2b150fde0e" name="Changes" comment="lab4 - add namespace creation using default value or via pass cmd parameter">
-      <change afterPath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/namespace.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/post-deployment.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/post-service.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/user-db-secret.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/user-service-persistent-volume.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/user-service.yaml" afterDir="false" />
+    <list default="true" id="7740ddac-1c86-4650-9e64-bb2b150fde0e" name="Changes" comment="lab3 - setup probes">
+      <change afterPath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/ingress.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Readme" beforeDir="false" afterPath="$PROJECT_DIR$/Readme" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/k8s/helm/user-post-app/Chart.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/helm/user-post-app/Chart.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/_helpers.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/_helpers.tpl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/database-via-statefulset.yml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/database-via-statefulset.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/namespace.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/user-post-db-secrets.yml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/post-db-secret.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/user-post-deployments.yml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/user-deployment.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/user-post-services.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/user-service-persistent-volume.yml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/user-service-persistent-volume-claim.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/database-via-statefulset.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/database-via-statefulset.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/post-deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/post-deployment.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/post-service.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/post-service.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/user-db-secret.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/user-db-secret.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/user-deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/user-deployment.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/user-service-persistent-volume-claim.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/user-service-persistent-volume-claim.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/user-service-persistent-volume.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/user-service-persistent-volume.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/user-service.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/helm/user-post-app/templates/user-service.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/k8s/helm/user-post-app/values.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/k8s/helm/user-post-app/values.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +104,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "20",
-    "last_opened_file_path": "D:/Education/Kubernetes/wrs2/k8s-docker-microservice/k8s/helm/user-post-app/templates",
+    "last_opened_file_path": "D:/Education/Kubernetes/wrs2",
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.27539062",
@@ -282,6 +281,8 @@
       <workItem from="1686300099346" duration="5000" />
       <workItem from="1686300122696" duration="327000" />
       <workItem from="1686300466818" duration="11316000" />
+      <workItem from="1687366798397" duration="8076000" />
+      <workItem from="1687375342345" duration="15889000" />
     </task>
     <task id="LOCAL-00001" summary="share project">
       <created>1681901542427</created>

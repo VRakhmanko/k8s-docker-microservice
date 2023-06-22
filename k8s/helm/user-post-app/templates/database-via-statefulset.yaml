@@ -4,6 +4,9 @@ kind: StatefulSet
 metadata:
   namespace: {{ template "k8s-docker-microservice.namespace" . }}
   name: post-postgresql-db
+  labels:
+    {{- include "k8s-docker-microservice.labels" . | nindent 4 }}
+    application: posts
 spec:
   serviceName: post-postgresql-db-service
   selector:
@@ -89,6 +92,9 @@ kind: Service
 metadata:
   namespace: {{ template "k8s-docker-microservice.namespace" . }}
   name: post-postgres
+  labels:
+    {{- include "k8s-docker-microservice.labels" . | nindent 4 }}
+    application: posts
 spec:
   selector:
     app: post-postgresql-db
@@ -104,9 +110,8 @@ metadata:
   namespace: {{ template "k8s-docker-microservice.namespace" . }}
   name: post-postgresql-db-config
   labels:
+    {{- include "k8s-docker-microservice.labels" . | nindent 4 }}
     app: post-postgresql-db
-    current-date: {{ include "user-post-app.current-date" . }}
-    version: {{ include "user-post-app.version" . }}
 data:
   PGDATA: /data/pgdata
 
@@ -116,6 +121,9 @@ kind: StatefulSet
 metadata:
   namespace: {{ template "k8s-docker-microservice.namespace" . }}
   name: user-postgresql-db
+  labels:
+    {{- include "k8s-docker-microservice.labels" . | nindent 4 }}
+    application: users
 spec:
   serviceName: user-postgresql-db-service
   selector:

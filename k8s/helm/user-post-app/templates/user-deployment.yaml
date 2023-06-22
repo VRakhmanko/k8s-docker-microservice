@@ -4,6 +4,9 @@ kind: Deployment
 metadata:
   namespace: {{ template "k8s-docker-microservice.namespace" . }}
   name: user
+  labels:
+    {{- include "k8s-docker-microservice.labels" . | nindent 4 }}
+    application: users
 spec:
   replicas: {{ .Values.replicaCount }}
   strategy:
@@ -12,22 +15,24 @@ spec:
       maxUnavailable: 0
   selector:
     matchLabels:
-      app: user
+      pod-name: user-service
   template:
     metadata:
       labels:
-        app: user
+        pod-name: user-service
+        application: users
     spec:
       volumes:
         - name: user-pv-storage
           persistentVolumeClaim:
             claimName: user-pv-claim
       containers:
-        - image: epamviachaslaurakhmanko/user-service:1.0.0
+        - name: user-service
+          image: epamviachaslaurakhmanko/user-service:1.0.0
           imagePullPolicy: Always
-          name: user
           ports:
-            - containerPort: 18080
+            - name: http
+              containerPort: 18080
           env:
             - name: DbPassword
               valueFrom:
@@ -48,13 +53,15 @@ spec:
               name: user-pv-storage
           startupProbe:
             httpGet:
+              port: http
               path: /actuator/health/readiness
-              port: 18080
+            periodSeconds: 1
+            failureThreshold: 120
           readinessProbe:
             httpGet:
+              port: http
               path: /actuator/health/readiness
-              port: 18080
           livenessProbe:
             httpGet:
+              port: http
               path: /actuator/health/liveness
-              port: 18080

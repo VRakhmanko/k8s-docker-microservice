@@ -12,10 +12,12 @@ spec:
       maxUnavailable: 0
   selector:
     matchLabels:
+      pod-name: post-service
       app: post
   template:
     metadata:
       labels:
+        pod-name: post-service
         app: post
     spec:
       containers:

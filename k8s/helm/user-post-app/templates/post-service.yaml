@@ -4,12 +4,14 @@ kind: Service
 metadata:
   namespace: {{ template "k8s-docker-microservice.namespace" . }}
   name: post-service
+  labels:
+    {{- include "k8s-docker-microservice.labels" . | nindent 4 }}
 spec:
   ports:
-    - protocol: "TCP"
+    - name: http
+      protocol: TCP
       port: 18081
-      targetPort: 18081
-      nodePort: 30081
+      targetPort: http
   selector:
+    pod-name: post-service
     app: post
-  type: NodePort

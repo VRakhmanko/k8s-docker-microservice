@@ -5,6 +5,7 @@ metadata:
   namespace: {{ template "k8s-docker-microservice.namespace" . }}
   name: user-pv
   labels:
+    application: users
     type: local
 spec:
   storageClassName: manual

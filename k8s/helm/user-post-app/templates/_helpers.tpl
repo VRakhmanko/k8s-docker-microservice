@@ -12,9 +12,16 @@ Create chart current date.
 {{- now|date ("2006-01-02") }}
 {{- end }}
 
+{{- define "k8s-docker-microservice.labels" -}}
+release: {{ .Release.Name }}
+version: {{ .Chart.Version }}
+date: {{ now | date "2006-01-02" }}
+{{- end -}}
+
 {{/*
 Expand the namespace of the chart.
 */}}
 {{- define "k8s-docker-microservice.namespace" -}}
 {{- default .Release.Namespace .Values.namespace -}}
 {{- end -}}
+
