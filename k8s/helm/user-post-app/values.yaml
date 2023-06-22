@@ -4,4 +4,16 @@
 
 namespace: ""
 namespaceCreate: false
-replicaCount: 2
+replicaCount: 1
+
+users:
+  ingress:
+    enabled: true
+    host: users.k8s-docker-microservice
+    path: /users/api/v1
+
+posts:
+  ingress:
+    enabled: true
+    host: posts.k8s-docker-microservice
+    path: /posts/api/v1
